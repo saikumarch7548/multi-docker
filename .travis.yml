@@ -10,7 +10,7 @@ script:
 
 after_success:
   - docker build -t saikumarch7548/multi-client ./client
-  - docker build -t saikumarch7548/multi-nginix ./nginx
+  - docker build -t saikumarch7548/multi-nginx ./nginx
   - docker build -t saikumarch7548/multi-server ./server
   - docker build -t saikumarch7548/multi-worker ./worker
 
