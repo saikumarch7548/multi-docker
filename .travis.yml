@@ -22,3 +22,16 @@ after_success:
   - docker push saikumarch7548/multi-server
   - docker push saikumarch7548/multi-worker
 
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: arn:aws:s3:::elasticbeanstalk-us-east-2-488092440969
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEKY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
